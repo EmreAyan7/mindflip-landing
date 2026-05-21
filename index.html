@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mindify, yapay zeka destekli akıllı kart üretimi ve SM-2 aralıklı tekrar algoritması ile öğrenmeyi kalıcı ve eğlenceli bir alışkanlığa dönüştürür."
+    />
+    <meta name="theme-color" content="#008B47" />
+    <title>Mindify | Akıllı Spaced Repetition Flashcard Öğrenme Platformu</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,800&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Sticky Glassmorphic Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a class="brand" href="#top" aria-label="Mindify Ana Sayfa">
+          <div class="logo-wrapper">
+            <img src="assets/mindify_mascot.png" alt="Mindify Logo" />
+          </div>
+          <span class="brand-text">Mindify</span>
+        </a>
+        <nav class="desktop-nav">
+          <a href="#features" class="nav-link">Özellikler</a>
+          <a href="#demo" class="nav-link">Deneyimle</a>
+          <a href="#ai-playground" class="nav-link">AI Üretici</a>
+          <a href="#gamification" class="nav-link">Oyunlaştırma</a>
+          <a href="#faq" class="nav-link">S.S.S.</a>
+        </nav>
+        <div class="header-actions">
+          <a class="button header-cta" href="#cta">Erken Erişim</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-bg-glows">
+          <div class="glow glow-1"></div>
+          <div class="glow glow-2"></div>
+        </div>
+        <div class="hero-container">
+          <div class="hero-copy">
+            <div class="badge-new animate-float">
+              <span class="badge-icon">✨</span>
+              <span class="badge-text">Yapay Zeka & SM-2 Algoritması Bir Arada</span>
+            </div>
+            <h1>
+              Bilgiyi <span class="gradient-text">Unutulmaz</span> Kılmanın Akıllı Yolu
+            </h1>
+            <p class="lead">
+              Mindify, yapay zeka destekli akıllı flashcard tasarımı ve bilimsel aralıklı tekrar (Spaced Repetition) ritmiyle çalışmayı bağımlılık yapan eğlenceli bir alışkanlığa dönüştürür.
+            </p>
+            <div class="hero-actions-container">
+              <a class="button primary glow-button" href="#demo">Şimdi Canlı Dene 👇</a>
+              <a class="button secondary" href="#features">Özellikleri Keşfet</a>
+            </div>
+            <div class="hero-quick-stats">
+              <div class="stat-item">
+                <span class="stat-number">%93</span>
+                <span class="stat-label">Hafıza Kalıcılığı</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number">10x</span>
+                <span class="stat-label">Daha Hızlı Öğrenme</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number">SM-2</span>
+                <span class="stat-label">Bilimsel Altyapı</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Large Mascot Highlight with Glowing Aura -->
+          <div class="hero-mascot-visual">
+            <div class="mascot-aura"></div>
+            <div class="mascot-frame">
+              <img src="assets/mindify_mascot.png" alt="Mindify Akıllı Baykuş Maskotu" class="main-mascot-img" />
+              <div class="floating-badge badge-xp">+25 XP</div>
+              <div class="floating-badge badge-streak">🔥 12 Gün</div>
+              <div class="floating-badge badge-level">Lv 3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Metrics Strip -->
+      <section class="metrics-strip">
+        <div class="metrics-container">
+          <div class="metric-card">
+            <div class="metric-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="metric-info">
+              <h3>SM-2 Algoritması</h3>
+              <p>Kartları tam unutmaya yaklaştığınız anda karşınıza çıkararak kalıcı hafızaya alır.</p>
+            </div>
+          </div>
+          
+          <div class="metric-card">
+            <div class="metric-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <div class="metric-info">
+              <h3>AI Destekli Kartlar</h3>
+              <p>Herhangi bir konuyu yazın veya PDF yükleyin; yapay zeka saniyeler içinde mükemmel flashcard'lar üretsin.</p>
+            </div>
+          </div>
+          
+          <div class="metric-card">
+            <div class="metric-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="metric-info">
+              <h3>Oyunlaştırılmış Motivasyon</h3>
+              <p>XP puanları kazanın, serinizi (streak) koruyun, seviye atlayın ve başarı rozetleri kazanın.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Live Interactive Spaced Repetition Simulator (DEMO) -->
+      <section id="demo" class="section demo-section">
+        <div class="section-container">
+          <div class="section-header">
+            <div class="section-eyebrow">🚀 CANLI UYGULAMA DENEYİMİ</div>
+            <h2>Öğrenme Döngüsünü Test Et</h2>
+            <p class="section-subtitle">
+              Aşağıdaki interaktif simülatörle bir çalışma seansı yap. Kartı çevirmek için üzerine tıkla, ne kadar iyi hatırladığını seç ve XP kazanıp seviye atlayışını izle!
+            </p>
+          </div>
+
+          <div class="simulator-layout">
+            <!-- Left Side: Interactive 3D Card Platform -->
+            <div class="card-simulator-container">
+              <div class="simulator-hud">
+                <div class="hud-left">
+                  <span class="hud-deck-title">📚 Genel Kültür ve Bilim</span>
+                  <span class="hud-badge animate-pulse" id="card-index-label">Kart 1/3</span>
+                </div>
+                <div class="hud-right">
+                  <div class="hud-streak-container">
+                    <span class="streak-fire">🔥</span>
+                    <span class="streak-count" id="sim-streak">12 Gün</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3D Card Scene -->
+              <div class="card-scene" id="card-scene">
+                <div class="card-box" id="flashcard">
+                  
+                  <!-- Card Front -->
+                  <div class="card-face card-front">
+                    <div class="card-decor"></div>
+                    <div class="card-hint-badge" id="card-hint">💡 İpucu Al</div>
+                    <div class="card-face-content">
+                      <p class="card-category">BİYOLOJİ</p>
+                      <h3 class="card-text" id="card-front-text">Mitokondrinin temel hücresel görevi nedir?</h3>
+                    </div>
+                    <div class="card-action-hint">Döndürmek İçin Tıkla 🔄</div>
+                  </div>
+
+                  <!-- Card Back -->
+                  <div class="card-face card-back">
+                    <div class="card-decor"></div>
+                    <div class="card-face-content">
+                      <p class="card-category">CEVAP</p>
+                      <h3 class="card-text-back" id="card-back-text">Hücresel solunum gerçekleştirerek hücrenin ihtiyacı olan ATP (enerji) moleküllerini üretmektir.</h3>
+                    </div>
+                    <div class="card-action-hint">Kendini Değerlendir 👇</div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Confidence SM-2 Controls (Visible when flipped or back) -->
+              <div class="simulator-controls" id="confidence-controls">
+                <button class="btn-confidence again" data-rating="again">
+                  <span class="btn-emoji">😩</span>
+                  <span class="btn-title">Tekrar</span>
+                  <span class="btn-time">1 dk</span>
+                </button>
+                <button class="btn-confidence hard" data-rating="hard">
+                  <span class="btn-emoji">😐</span>
+                  <span class="btn-title">Zor</span>
+                  <span class="btn-time">1 gün</span>
+                </button>
+                <button class="btn-confidence good" data-rating="good">
+                  <span class="btn-emoji">😊</span>
+                  <span class="btn-title">İyi</span>
+                  <span class="btn-time">3 gün</span>
+                </button>
+                <button class="btn-confidence easy" data-rating="easy">
+                  <span class="btn-emoji">😎</span>
+                  <span class="btn-title">Kolay</span>
+                  <span class="btn-time">7 gün</span>
+                </button>
+              </div>
+
+              <!-- Helper Tip -->
+              <p class="simulator-helper-text">
+                💡 <span id="help-text">İlk olarak kartın üzerine tıklayarak cevabını gör.</span>
+              </p>
+            </div>
+
+            <!-- Right Side: Live Gamification Engine State -->
+            <div class="gamification-panel">
+              <h3>Çalışma İlerleme Durumu</h3>
+              <p class="panel-desc">Seans boyunca yaptığın değerlendirmeler, veritabanına anlık senkronize edilerek oyunlaştırma puanlarını besler.</p>
+              
+              <!-- XP Level Widget -->
+              <div class="game-widget level-widget">
+                <div class="widget-header">
+                  <span class="level-indicator">SEVİYE <strong id="sim-level">3</strong></span>
+                  <span class="xp-val"><span id="sim-current-xp">160</span> / 200 XP</span>
+                </div>
+                <div class="xp-progress-bar-container">
+                  <div class="xp-progress-bar" id="sim-xp-progress" style="width: 80%;"></div>
+                </div>
+                <div class="widget-footer">
+                  <span>Bir sonraki seviyeye <strong id="sim-xp-remaining">40</strong> XP kaldı</span>
+                </div>
+              </div>
+
+              <!-- Memory Strength Widget -->
+              <div class="game-widget memory-widget">
+                <div class="widget-header">
+                  <span>Ortalama Hafıza Gücü</span>
+                  <span class="memory-percent" id="sim-memory-strength">82%</span>
+                </div>
+                <div class="memory-bar-wrapper">
+                  <div class="memory-bar" id="sim-memory-bar" style="width: 82%;"></div>
+                </div>
+                <p class="widget-info">Hafıza gücünüz, SM-2 algoritmasının kartları ne kadar aralıklı planladığına bağlı hesaplanır.</p>
+              </div>
+
+              <!-- Live Log Updates -->
+              <div class="live-activity-log">
+                <h4>Aktivite Günlüğü</h4>
+                <div class="log-list" id="activity-log">
+                  <div class="log-item system">⚡ Simülasyon başlatıldı. Başarılar dileriz!</div>
+                </div>
+              </div>
+
+              <div class="panel-actions">
+                <button class="button secondary w-100" id="reset-sim-btn">Simülasyonu Sıfırla 🔄</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Advanced Features Grid -->
+      <section id="features" class="section features-section">
+        <div class="section-container">
+          <div class="section-header">
+            <div class="section-eyebrow">🛠️ GELİŞMİŞ ÖZELLİKLER</div>
+            <h2>Öğrenmeyi Keyfe Dönüştüren Sistem</h2>
+            <p class="section-subtitle">Mindify, sadece bir ezber uygulaması değildir. Bilişsel bilimin en son bulgularıyla tasarlanmış kapsamlı bir öğrenme ekosistemidir.</p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-detail-card">
+              <div class="fd-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <h3>Gelişmiş SM-2 Planlama</h3>
+              <p>Kartların her birini zorluk seviyenize göre tek tek takip eder. Tekrar aralıklarını hafızanızın unutma eğrisine (Forgetting Curve) göre optimize ederek çalışma veriminizi katlar.</p>
+              <ul class="feature-bullets">
+                <li>Kişiye özel zorluk katsayıları</li>
+                <li>Dinamik gün aralıkları</li>
+                <li>Hafıza gücü ve kalıcılık takibi</li>
+              </ul>
+            </div>
+
+            <div class="feature-detail-card">
+              <div class="fd-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <h3>Yapay Zeka ile Jet Hızında Kart</h3>
+              <p>Uzun metinleri, ders notlarını ya da karmaşık konuları yapay zekaya emanet edin. Mindify AI saniyeler içinde kavramsal olarak kusursuz Soru-Cevap kartları türetir.</p>
+              <ul class="feature-bullets">
+                <li>Metinden veya başlıktan kart üretimi</li>
+                <li>Otomatik ipucu ve açıklama yazımı</li>
+                <li>PDF ve döküman analizi (Çok Yakında)</li>
+              </ul>
+            </div>
+
+            <div class="feature-detail-card">
+              <div class="fd-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3>Bağımlılık Yapan Oyunlaştırma</h3>
+              <p>Günlük serini (Streak) korumak, seviye atlamak ve başarı rozetlerini toplamak için can atacaksınız. Öğrenmek artık bir görev değil, keyifli bir günlük oyundur.</p>
+              <ul class="feature-bullets">
+                <li>Günlük seri hedefleri ve alev simgesi</li>
+                <li>Kart bazlı XP puanlama sistemi</li>
+                <li>Kilitli kafa açan başarı rozetleri</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Live Mock AI Playground -->
+      <section id="ai-playground" class="section ai-playground-section">
+        <div class="section-container">
+          <div class="section-header">
+            <div class="section-eyebrow">🧠 AI SİMÜLATÖRÜ</div>
+            <h2>Yapay Zekanın Gücünü Canlı Deneyimle</h2>
+            <p class="section-subtitle">
+              Sadece bir konu başlığı yazarak saniyeler içinde öğrenmeye başlamaya hazır mısın? Aşağıdaki sihirli kutuya merak ettiğin bir konuyu yaz ve yapay zekanın kartları nasıl tasarladığını izle!
+            </p>
+          </div>
+
+          <div class="ai-box-wrapper">
+            <div class="ai-input-zone">
+              <label for="ai-topic-input">Öğrenmek istediğiniz konuyu yazın:</label>
+              <div class="ai-input-row">
+                <input 
+                  type="text" 
+                  id="ai-topic-input" 
+                  placeholder="Örn: JavaScript Array Metodları, Fotosentez Evreleri, Roma İmparatorluğu..." 
+                  value="JavaScript Array Metodları"
+                />
+                <button class="button primary" id="generate-ai-cards-btn">AI Kart Üret ✨</button>
+              </div>
+              <div class="preset-suggestions">
+                <span>Veya hızlıca seçin:</span>
+                <button class="preset-tag" data-topic="Fotosentez Süreci">🍃 Fotosentez Süreci</button>
+                <button class="preset-tag" data-topic="Coğrafi Keşifler">🗺️ Coğrafi Keşifler</button>
+                <button class="preset-tag" data-topic="İngilizce İleri Seviye Fiiller">🇬🇧 İngilizce Fiiller</button>
+              </div>
+            </div>
+
+            <!-- Terminal Mock Loader -->
+            <div class="ai-loading-terminal" id="ai-terminal">
+              <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="terminal-title">Mindify AI Generator Engine v1.0.0</span>
+              </div>
+              <div class="terminal-body" id="terminal-body">
+                <div class="term-line">💬 AI Hazır. Lütfen konuyu girip "AI Kart Üret" butonuna basın.</div>
+              </div>
+            </div>
+
+            <!-- AI Result Flashcards Layout -->
+            <div class="ai-results-wrapper" id="ai-results">
+              <h4>✨ Üretilen Yapay Zeka Deste Kartları</h4>
+              <div class="ai-cards-grid" id="ai-cards-container">
+                <!-- Will be dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gamification / Streaks & Statistics Visual Section -->
+      <section id="gamification" class="section gamification-section">
+        <div class="section-container">
+          <div class="split-layout">
+            
+            <!-- Left Side visual dashboard -->
+            <div class="dashboard-preview-wrapper">
+              <div class="dashboard-decor-circle"></div>
+              
+              <!-- Floating Streak Heatmap Widget -->
+              <div class="glass-widget streak-calendar-widget">
+                <div class="widget-top">
+                  <h4>🔥 12 Günlük Seri</h4>
+                  <span>Bu haftayı tamamladın!</span>
+                </div>
+                <div class="calendar-grid">
+                  <div class="day-dot active">Pzt<span>🔥</span></div>
+                  <div class="day-dot active">Sal<span>🔥</span></div>
+                  <div class="day-dot active">Çar<span>🔥</span></div>
+                  <div class="day-dot active">Per<span>🔥</span></div>
+                  <div class="day-dot active">Cum<span>🔥</span></div>
+                  <div class="day-dot active">Cmt<span>🔥</span></div>
+                  <div class="day-dot active current">Paz<span>🔥</span></div>
+                </div>
+                <p class="widget-tip">Mükemmel gidiyorsun! Serini bozmamak için yarın en az 5 kart gözden geçir.</p>
+              </div>
+
+              <!-- Achievement Badges Box -->
+              <div class="glass-widget badges-widget">
+                <h4>🏆 Kazanılan Başarılar</h4>
+                <div class="badges-flex">
+                  <div class="badge-item tooltipped" data-tooltip="İlk Desteyi Tamamladın!">
+                    <span class="badge-icon-huge">🥇</span>
+                    <span class="badge-title">Öncü</span>
+                  </div>
+                  <div class="badge-item tooltipped" data-tooltip="7 Gün Üst Üste Çalıştın!">
+                    <span class="badge-icon-huge">🔥</span>
+                    <span class="badge-title">İstikrarlı</span>
+                  </div>
+                  <div class="badge-item tooltipped" data-tooltip="AI ile 50 Kart Ürettin!">
+                    <span class="badge-icon-huge">🧠</span>
+                    <span class="badge-title">Yapay Zeka Dâhisi</span>
+                  </div>
+                  <div class="badge-item locked tooltipped" data-tooltip="Seviye 5'e Ulaş!">
+                    <span class="badge-icon-huge">👑</span>
+                    <span class="badge-title">Bilge (Kilitli)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side copy -->
+            <div class="gamification-copy">
+              <div class="section-eyebrow">🏆 MOTİVASYON MERKEZİ</div>
+              <h2>Öğrenmek Artık Sıkıcı Değil</h2>
+              <p class="lead">
+                Uygulama içi gamification kurgusuyla çalışma rutininiz sürdürülebilir bir ritme kavuşur. Günlük serinizi (streak) koruma dürtüsü, beyninizin erteleme mekanizmasını alt eder.
+              </p>
+              <div class="gamification-features-list">
+                <div class="g-list-item">
+                  <div class="g-list-icon">🔥</div>
+                  <div class="g-list-text">
+                    <h4>Günlük Çalışma Serileri</h4>
+                    <p>Her gün yaptığın çalışmalar serini canlı tutar. Unutmamak için her gün küçük bir seans tamamlamak alışkanlığı perçinler.</p>
+                  </div>
+                </div>
+                <div class="g-list-item">
+                  <div class="g-list-icon">⭐</div>
+                  <div class="g-list-text">
+                    <h4>XP & Seviye Atlama</h4>
+                    <p>Çalıştığın, cevapladığın ve ürettiğin her kart sana tecrübe puanı kazandırır. XP barını doldur, yeni seviyelere yüksel!</p>
+                  </div>
+                </div>
+                <div class="g-list-item">
+                  <div class="g-list-icon">🎖️</div>
+                  <div class="g-list-text">
+                    <h4>Rozetler ve İlerlemeler</h4>
+                    <p>Çeşitli hedeflere ulaştıkça profilinde sergileyebileceğin özel rozetler kazanırsın. Çalışmalarının karşılığını görsel olarak gör.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Beautiful FAQ Accordion Section -->
+      <section id="faq" class="section faq-section">
+        <div class="section-container">
+          <div class="section-header">
+            <div class="section-eyebrow">💬 MERAK EDİLENLER</div>
+            <h2>Sıkça Sorulan Sorular</h2>
+            <p class="section-subtitle">Mindify ve arkasındaki bilimsel çalışma metodolojisi hakkında merak ettiğiniz her şeye buradan ulaşabilirsiniz.</p>
+          </div>
+
+          <div class="faq-accordion-wrapper">
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>📚 Aralıklı Tekrar (Spaced Repetition) Nedir?</span>
+                <span class="icon-plus"></span>
+              </button>
+              <div class="accordion-panel">
+                <p>
+                  Aralıklı tekrar, bilgilerin unutulmaya en yakın olduğu zaman dilimlerinde (Unutma Eğrisi analizine dayanarak) tekrar edilmesi prensibine dayanan bilimsel olarak kanıtlanmış bir öğrenme tekniğidir. Bilgiyi ezberlemek yerine, uzun vadeli hafızaya yerleşmesini sağlar. Mindify, bu süreç için meşhur SM-2 algoritmasını kullanır.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>🧠 Yapay Zeka Flashcard Üretimi Nasıl Çalışır?</span>
+                <span class="icon-plus"></span>
+              </button>
+              <div class="accordion-panel">
+                <p>
+                  Uygulama içine bir konu yazdığınızda veya bir makale yapıştırdığınızda, arka planda çalışan Mindify AI (GPT-4o-mini entegrasyonu), metni semantik olarak analiz eder. Metindeki anahtar kavramları, tanımları ve neden-sonuç ilişkilerini ayıklayarak en ideal soru-cevap çiftlerini ve ipuçlarını oluşturur. Bu sayede saatler sürecek kart hazırlama süresi 3 saniyeye iner!
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>📁 Kendi PDF veya Notlarımı Yükleyebilir miyim?</span>
+                <span class="icon-plus"></span>
+              </button>
+              <div class="accordion-panel">
+                <p>
+                  Evet! Mindify v1 sürümünde ders notlarınızı, slaytlarınızı veya kitap bölümlerinizi PDF olarak yükleyebileceksiniz. Sistem PDF dosyasını güvenli bir şekilde tarayarak içinden otomatik olarak onlarca kapsamlı çalışma kartı üretebilir ve bunları destelerinize kaydedebilir.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>🌐 Uygulama Çevrimdışı Çalışıyor mu?</span>
+                <span class="icon-plus"></span>
+              </button>
+              <div class="accordion-panel">
+                <p>
+                  Evet, internet bağlantınız olmasa bile cihazınızdaki yerel veritabanı (SQLite/WatermelonDB cache) sayesinde çalışma seanslarınızı kesintisiz gerçekleştirebilirsiniz. İnternete bağlandığınız anda kazandığınız XP puanları, tamamlanan kartlar ve serileriniz bulut hesabınızla otomatik olarak eşitlenir.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>💸 Mindify Ücretli mi Olacak?</span>
+                <span class="icon-plus"></span>
+              </button>
+              <div class="accordion-panel">
+                <p>
+                  Mindify'ın temel özellikleri (manuel kart ekleme, SM-2 algoritmalı çalışma seansları, temel ilerleme takibi ve günlük sınırlı AI üretimi) her zaman **tamamen ücretsiz** olacaktır. Sınırsız PDF yükleme, sınırsız AI üretimi ve derinlemesine bilişsel analiz grafiklerine ihtiyaç duyan profesyonel kullanıcılar için çok uygun fiyatlı bir Premium üyelik seçeneği de sunulacaktır.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- High-End CTA Form with Floating Elements -->
+      <section id="cta" class="section cta-section">
+        <div class="section-container">
+          <div class="cta-box-card">
+            <div class="cta-decor-sparkle cta-sparkle-1">✨</div>
+            <div class="cta-decor-sparkle cta-sparkle-2">✨</div>
+            
+            <div class="cta-content">
+              <div class="cta-mascot-circle">
+                <img src="assets/mindify_mascot.png" alt="Mindify Mascot Owl" />
+              </div>
+              <div class="section-eyebrow white">🚀 BAŞLAMAYA HAZIR MISIN?</div>
+              <h2>Mindify ile Öğrenmeyi Hafiflet</h2>
+              <p>
+                Mobil uygulamamız çok yakında App Store ve Google Play Store'da yayında olacak. Erken erişim listesine katılarak uygulamayı ilk deneyenlerden biri ol, 3 aylık Ücretsiz Premium üyelik hakkı kazan!
+              </p>
+
+              <!-- Capture email form -->
+              <form class="early-access-form" id="early-access-form">
+                <div class="input-glow-wrapper">
+                  <input 
+                    type="email" 
+                    id="user-email" 
+                    placeholder="E-posta adresinizi girin..." 
+                    required 
+                  />
+                  <button type="submit" class="button primary glow-button">
+                    Erken Erişime Katıl 🚀
+                  </button>
+                </div>
+              </form>
+              <div class="form-feedback" id="form-feedback"></div>
+              
+              <div class="cta-social-badges">
+                <span>🛡️ Spam göndermeyiz. Dilediğiniz zaman kayıttan çıkabilirsiniz.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand-side">
+          <a class="brand" href="#top">
+            <div class="logo-wrapper mini">
+              <img src="assets/mindify_mascot.png" alt="Mindify Logo" />
+            </div>
+            <span class="brand-text">Mindify</span>
+          </a>
+          <p class="footer-moto">
+            Yapay zeka destekli akıllı aralıklı tekrar uygulaması. Öğrenmeyi kalıcı hale getirir, motivasyonu yüksek tutar.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" aria-label="Github">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-side">
+          <div class="footer-links-column">
+            <h4>Navigasyon</h4>
+            <a href="#features">Özellikler</a>
+            <a href="#demo">Deneyimle</a>
+            <a href="#ai-playground">AI Üretici</a>
+            <a href="#gamification">Oyunlaştırma</a>
+          </div>
+          <div class="footer-links-column">
+            <h4>Bilişsel Bilim</h4>
+            <a href="https://en.wikipedia.org/wiki/Spaced_repetition" target="_blank" rel="noopener">Spaced Repetition</a>
+            <a href="https://en.wikipedia.org/wiki/SuperMemo#Description_of_SM-2_algorithm" target="_blank" rel="noopener">SM-2 Algoritması</a>
+            <a href="https://en.wikipedia.org/wiki/Forgetting_curve" target="_blank" rel="noopener">Unutma Eğrisi</a>
+          </div>
+          <div class="footer-links-column">
+            <h4>Yasal</h4>
+            <a href="#">Gizlilik Politikası</a>
+            <a href="#">Kullanım Koşulları</a>
+            <a href="mailto:hello@mindify.app">İletişim</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mindify. Tüm Hakları Saklıdır. Bu proje bir tanıtım ve ön kayıt sitesidir.</p>
+      </div>
+    </footer>
+
+    <!-- Custom Script for Interactive Elements -->
+    <script src="script.js"></script>
+  </body>
+</html>

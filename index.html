@@ -547,7 +547,7 @@
               <div class="section-eyebrow white">🚀 BAŞLAMAYA HAZIR MISIN?</div>
               <h2>Mindify ile Öğrenmeyi Hafiflet</h2>
               <p>
-                Mobil uygulamamız çok yakında App Store ve Google Play Store'da yayında olacak. Erken erişim listesine katılarak uygulamayı ilk deneyenlerden biri ol, 3 aylık Ücretsiz Premium üyelik hakkı kazan!
+                Mobil uygulamamız çok yakında App Store ve Google Play Store'da yayında olacak. Erken erişim listesine katılarak uygulamayı ilk deneyenlerden biri ol; yayınlandığında hediyemizle beraber uygulamaya kayıt ol!
               </p>
 
               <!-- Capture email form -->
@@ -556,7 +556,9 @@
                   <input 
                     type="email" 
                     id="user-email" 
+                    name="email"
                     placeholder="E-posta adresinizi girin..." 
+                    autocomplete="email"
                     required 
                   />
                   <button type="submit" class="button primary glow-button">
@@ -564,7 +566,7 @@
                   </button>
                 </div>
               </form>
-              <div class="form-feedback" id="form-feedback"></div>
+              <div class="form-feedback" id="form-feedback" role="status" aria-live="polite"></div>
               
               <div class="cta-social-badges">
                 <span>🛡️ Spam göndermeyiz. Dilediğiniz zaman kayıttan çıkabilirsiniz.</span>

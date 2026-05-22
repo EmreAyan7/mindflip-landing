@@ -42,27 +42,32 @@ async function sendEmail({ to, subject, html }) {
 }
 
 async function saveLeadToGoogleSheets({ email, submittedAt }) {
-  const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+  const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL || process.env.OOGLE_SHEETS_WEBHOOK_URL;
 
   if (!webhookUrl) {
-    throw new Error('GOOGLE_SHEETS_WEBHOOK_URL is not configured.');
+    console.warn('GOOGLE_SHEETS_WEBHOOK_URL is not configured. Skipping Google Sheets save.');
+    return;
   }
 
-  const response = await fetch(webhookUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      email,
-      submittedAt,
-      source: 'mindify-landing',
-    }),
-  });
+  try {
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        submittedAt,
+        source: 'mindify-landing',
+      }),
+    });
 
-  if (!response.ok) {
-    const details = await response.text();
-    throw new Error(`Google Sheets webhook failed: ${response.status} ${details}`);
+    if (!response.ok) {
+      const details = await response.text();
+      console.error(`Google Sheets webhook failed: ${response.status} ${details}`);
+    }
+  } catch (err) {
+    console.error('Error calling Google Sheets webhook:', err);
   }
 }
 
@@ -94,27 +99,31 @@ module.exports = async function handler(request, response) {
     });
 
     if (process.env.RESEND_API_KEY) {
-      await Promise.all([
-        sendEmail({
-          to: ownerEmail,
-          subject: `Yeni Mindify erken erişim kaydı: ${normalizedEmail}`,
-          html: `
-            <h2>Yeni erken erişim kaydı</h2>
-            <p><strong>E-posta:</strong> ${safeEmail}</p>
-            <p><strong>Tarih:</strong> ${escapeHtml(submittedAt)}</p>
-          `,
-        }),
-        sendEmail({
-          to: normalizedEmail,
-          subject: 'Mindify erken erişim kaydınızı aldık',
-          html: `
-            <p>Merhaba,</p>
-            <p>Mindify erken erişim kaydınızı aldık.</p>
-            <p>Uygulama yayınlandığında hediyemizle beraber uygulamaya kayıt olabilirsiniz. Gelişmelerden sizi e-posta ile haberdar edeceğiz.</p>
-            <p>Sevgiler,<br />Mindify Ekibi</p>
-          `,
-        }),
-      ]);
+      try {
+        await Promise.all([
+          sendEmail({
+            to: ownerEmail,
+            subject: `Yeni Mindify erken erişim kaydı: ${normalizedEmail}`,
+            html: `
+              <h2>Yeni erken erişim kaydı</h2>
+              <p><strong>E-posta:</strong> ${safeEmail}</p>
+              <p><strong>Tarih:</strong> ${escapeHtml(submittedAt)}</p>
+            `,
+          }),
+          sendEmail({
+            to: normalizedEmail,
+            subject: 'Mindify erken erişim kaydınızı aldık',
+            html: `
+              <p>Merhaba,</p>
+              <p>Mindify erken erişim kaydınızı aldık.</p>
+              <p>Uygulama yayınlandığında hediyemizle beraber uygulamaya kayıt olabilirsiniz. Gelişmelerden sizi e-posta ile haberdar edeceğiz.</p>
+              <p>Sevgiler,<br />Mindify Ekibi</p>
+            `,
+          }),
+        ]);
+      } catch (emailError) {
+        console.error('Email sending failed, but lead was saved:', emailError);
+      }
     }
 
     return response.status(200).json({

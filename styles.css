@@ -1831,6 +1831,19 @@ p {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.form-feedback.error {
+  color: #FECACA;
+  background-color: rgba(239, 68, 68, 0.18);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 12px 20px;
+  border-radius: 12px;
+}
+
+.input-glow-wrapper button:disabled {
+  cursor: wait;
+  opacity: 0.8;
+}
+
 .form-feedback code {
   background-color: rgba(255, 255, 255, 0.15);
   padding: 2px 8px;

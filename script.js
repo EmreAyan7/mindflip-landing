@@ -572,33 +572,58 @@ document.addEventListener('DOMContentLoaded', () => {
   const earlyAccessForm = document.getElementById('early-access-form');
   const userEmailInput = document.getElementById('user-email');
   const formFeedback = document.getElementById('form-feedback');
+  const submitButton = earlyAccessForm?.querySelector('button[type="submit"]');
 
-  earlyAccessForm.addEventListener('submit', (e) => {
+  earlyAccessForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
     
     const email = userEmailInput.value.trim();
     if (!email) return;
     
-    // Simulate API call
+    const originalButtonText = submitButton?.textContent;
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Kaydediliyor...";
+    }
+
     formFeedback.textContent = "Kaydınız yapılıyor, lütfen bekleyin...";
     formFeedback.className = "form-feedback processing";
     
-    setTimeout(() => {
-      // Save to local storage as proof of submission
+    try {
+      const response = await fetch('/api/early-access', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Kaydınızı şu anda alamadık. Lütfen biraz sonra tekrar deneyin.');
+      }
+
       let emails = JSON.parse(localStorage.getItem('mindify_early_emails') || '[]');
       emails.push({ email: email, date: new Date().toISOString() });
       localStorage.setItem('mindify_early_emails', JSON.stringify(emails));
       
-      // Success feedback
-      formFeedback.innerHTML = `🎉 <strong>Başarılı!</strong> Kaydınız yapıldı. 3 aylık <strong>Ücretsiz Premium</strong> kupon kodunuz <code>${email.split('@')[0].toUpperCase()}-MINDIFY3</code> e-posta adresinize gönderildi!`;
+      formFeedback.innerHTML = `🎉 <strong>Kaydınızı aldık!</strong> ${result.message || 'Uygulama yayınlandığında hediyemizle beraber uygulamaya kayıt olabilirsiniz.'}`;
       formFeedback.className = "form-feedback success";
       userEmailInput.value = '';
       
-      // Trigger gorgeous fullscreen confetti shower
       triggerConfetti();
       
-      logEvent(`🚀 Yeni erken erişim kaydı yapıldı: ${email}! Aramıza hoş geldiniz.`, 'streak');
-    }, 1200);
+      logEvent(`🚀 Yeni erken erişim kaydı alındı: ${email}! Aramıza hoş geldiniz.`, 'streak');
+    } catch (error) {
+      formFeedback.textContent = error.message;
+      formFeedback.className = "form-feedback error";
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    }
   });
 
   // Simple Confetti effect
